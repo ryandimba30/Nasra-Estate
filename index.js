@@ -1,21 +1,36 @@
-// function displayComments(comments) {
-//     commentsList.innerHTML = "";
-//     comments.forEach(displayComment)
-// }
-// function displayComment(comment) {
-//     const newComment = document.createElement('li');
-//     newComment.textContent = comment.content;
-//     commentsList.append(newComment);
-// }
-// function addNewComment() {
-//     commentsList.addEventListener('submit', addComment)
-// }
-// function addComment(event) {
-//     event.preventDefault();
-//     const newPostedComment = event.target.comment.value;
-//     displayComment({ content: newPostedComment });
-//     event.target.reset();
-// }
+const randomSee = document.getElementById("see");
+const display = document.getElementById("display")
+randomSee.addEventListener('click',randomPics);
+let random
+function randomPics(){
+  fetch('https://www.pexels.com/api')
+  .then((response )=> response.json())
+  .then((data) => {
+  console.log(data.image)
+  display.innerHTML="<img src="+data.image +" width='200px' height='200px'/>";
+});
+}
+let flataTitle = document.getElementById("Get started");
+let flataimage = document.getElementById("Get started");
+let flataView = document.querySelector("View");
+function renderContent(data) {
+  flataTitle.innerText = data.title;
+  flataImage.src = data.image;
+  flatalikeBtn.innerHTML = data.likes;
+}
+mainForm = document.getElementById("comment-form");
+mainForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let newInput = document.createElement("li");
+  newInput.innerText = comment.value;
+  flataComment.append(newInput);
+  e.target.reset();
+});
+let num = 0;
+viewBtn.addEventListener("View", function(){
+  num = num + 1;
+  flatalikeBtn.innerText = num + " Get started";
+});
 const options = {
 	method: 'GET',
 	headers: {
