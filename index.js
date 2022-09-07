@@ -1,3 +1,16 @@
+//Alert function
+document.querySelector('#Get').addEventListener('click',
+       () => alert('Getting Started'));
+
+ //Alert function
+document.querySelector('#Get').addEventListener('click',
+() => alert('Getting Started'));
+
+//Alert function
+document.querySelector('#View').addEventListener('click',
+       () => alert('View more'));
+
+      
 const randomSee = document.getElementById("see");
 const display = document.getElementById("display")
 randomSee.addEventListener('click',randomPics);
